@@ -1,0 +1,29 @@
+SVR(Support Vector Regresion): en çok kullanılan model. sınıfı en iyi ayıracak çizgiyi bulmaya çalışır
+
+# SVR fit : SVR parametreleri derste anlatildi biz varsayalini kullanacagiz
+# parameter tuning de her parametre icin ornegin GridsearchCV ile optimizasyon yapilabilir..
+from sklearn.svm import SVR
+regressor = SVR(kernel = 'rbf')
+regressor.fit(X_train_scale, y_train_scale)
+y_pred_scale = regressor.predict(X_test_scale)
+
+from sklearn.metrics import r2_score
+r2_score(y_test_scale, y_pred_scale)
+
+#verileri ölçeklemeden modeli eğitelim ve test edelim
+#r2 değerinin veriler ölçeksiz olduğundaki durumunu görelim.
+#r2 değerinin negatif çıkması modelin başarısının çok kötü olduğu anlamına gelmektedir.
+from sklearn.metrics import r2_score
+r2_score(y_test, y_predOlceksiz)
+
+#########################################↨333
+decision tree(karar ağacı)
+from sklearn.tree import DecisionTreeRegressor
+regressor = DecisionTreeRegressor(random_state = 0)
+regressor.fit(X, y)
+
+y_pred = regressor.predict([[6.5]])
+
+#######################33333
+random forest
+birden fazla algoritmanın birleşimidir

@@ -1,0 +1,21 @@
+Backward elimination(bir feature selection'dur)
+1- Significance Level(SL) seç genelde 0.05
+2- bütün değerler kullanılarak bir model inşa edilir
+3- en yüksek p-value değeribe sahip olan değişken ele alınır şayet p>sl ise
+    4.adıma, değilse son adıma gidilir
+4.Bu aşamada 3.adımda seçilen ve en yüksek p-değerine sahip değişken sistemden kaldırılır
+5.Makine öğrenmesi güncellenir ve 3.adıma geri dönülür
+6.Makine öğrenmesi sonlandırılır
+
+p_value bize program tarafından otomatik olarak verilir
+
+Feature Selection
+1-tüm kolınları kullanırken elde edilen başarı referans olarak tutulur
+2-bir feat selection yöntemiyle yine tahmin yapılır ve elde edilen başarım ilk adımla kıyaslanır
+3-kıyaslama sonucunda başarım yeterli kabul edilirse(biz karar vereceğiz) daha az sayısa kolan içeren datasetle çalışmaya devam edilir
+
+
+**denklemde katsayısı olmayan b0 regresnyon dikkate alır bu ekleme kodu
+  X = np.append(arr = np.ones((50,1)).astype(int), values = X, axis = 1)
+  
+  ones(50,1) demek 50 satırlık 1'lerle dolu kolunu axis 1 yani dikey ekle artık bo kolonu var
